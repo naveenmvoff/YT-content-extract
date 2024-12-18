@@ -1,0 +1,354 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Blog - Based on YouTube Video</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        section h2 {
+            color: #333;
+        }
+
+        section p,
+        section ul {
+            color: #666;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Creating Blogs from YouTube Videos</h1>
+    </header>
+    <div class="container">
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p id="intro-text">Loading...</p>
+        </section>
+        <section id="key-points">
+            <h2>Key Points</h2>
+            <ul id="key-points-list">
+                <li>Loading...</li>
+            </ul>
+        </section>
+        <section id="notable-quotes">
+            <h2>Notable Quotes</h2>
+            <p id="quotes-text">Loading...</p>
+        </section>
+        <section id="conclusion">
+            <h2>Conclusion</h2>
+            <p id="conclusion-text">Loading...</p>
+        </section>
+    </div>
+    <footer>
+        <p>Click here to subscribe for more blogs</p>
+    </footer>
+
+    <script>
+        // Function to update Introduction section
+        function updateIntroduction(content) {
+            const introText = document.getElementById('intro-text');
+            introText.textContent = content || 'Content not available';
+        }
+
+        // Function to update Key Points section
+        function updateKeyPoints(content) {
+            const keyPointsList = document.getElementById('key-points-list');
+            keyPointsList.innerHTML = ''; // Clear existing content
+            if (content) {
+                const points = content.split('-').filter(Boolean);
+                keyPointsList.innerHTML = points.map(point => `<li>${point.trim()}</li>`).join('');
+            } else {
+                keyPointsList.innerHTML = '<li>Content not available</li>';
+            }
+        }
+
+        // Function to update Notable Quotes section
+        function updateNotableQuotes(content) {
+            const quotesText = document.getElementById('quotes-text');
+            quotesText.textContent = content || 'Content not available';
+        }
+
+        // Function to update Conclusion section
+        function updateConclusion(content) {
+            const conclusionText = document.getElementById('conclusion-text');
+            conclusionText.textContent = content || 'Content not available';
+        }
+
+        // Function to fetch and update all sections
+        async function updateContent() {
+            try {
+                // Update path to '../video_content.txt' from 'blog' folder
+                const response = await fetch('../video_content.txt');
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+
+                const text = await response.text();
+                const sections = text.split('**').filter(Boolean);
+                const content = {};
+
+                sections.forEach(section => {
+                    const [heading, ...body] = section.split(':');
+                    content[heading.trim()] = body.join(':').trim();
+                });
+
+                if (content['Introduction']) {
+                    document.querySelector('#introduction p').textContent = content['Introduction'];
+                }
+
+                if (content['Key Points']) {
+                    const points = content['Key Points'].split('-').filter(Boolean);
+                    const ul = document.querySelector('#key-points ul');
+                    ul.innerHTML = points.map(point => `<li>${point.trim()}</li>`).join('');
+                }
+
+                if (content['Notable Quotes']) {
+                    document.querySelector('#notable-quotes p').textContent = content['Notable Quotes'];
+                }
+
+                if (content['Conclusion']) {
+                    document.querySelector('#conclusion p').textContent = content['Conclusion'];
+                }
+            } catch (error) {
+                console.error('Error fetching or parsing content:', error);
+            }
+        }
+
+        updateContent();
+        setInterval(updateContent, 10000);
+
+    </script>
+</body>
+
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Blog - Based on YouTube Video</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        section h2 {
+            color: #333;
+        }
+
+        section p,
+        section ul {
+            color: #666;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Creating Blogs from YouTube Videos</h1>
+    </header>
+    <div class="container">
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p id="intro-text">Loading...</p>
+        </section>
+        <section id="key-points">
+            <h2>Key Points</h2>
+            <ul id="key-points-list">
+                <li>Loading...</li>
+            </ul>
+        </section>
+        <section id="notable-quotes">
+            <h2>Notable Quotes</h2>
+            <p id="quotes-text">Loading...</p>
+        </section>
+        <section id="conclusion">
+            <h2>Conclusion</h2>
+            <p id="conclusion-text">Loading...</p>
+        </section>
+    </div>
+    <footer>
+        <p>Click here to subscribe for more blogs</p>
+    </footer>
+
+    <script>
+        // Function to update Introduction section
+        function updateIntroduction(content) {
+            const introText = document.getElementById('intro-text');
+            introText.textContent = content || 'Content not available';
+        }
+
+        // Function to update Key Points section
+        function updateKeyPoints(content) {
+            const keyPointsList = document.getElementById('key-points-list');
+            keyPointsList.innerHTML = ''; // Clear existing content
+            if (content) {
+                const points = content.split('-').filter(Boolean);
+                keyPointsList.innerHTML = points.map(point => `<li>${point.trim()}</li>`).join('');
+            } else {
+                keyPointsList.innerHTML = '<li>Content not available</li>';
+            }
+        }
+
+        // Function to update Notable Quotes section
+        function updateNotableQuotes(content) {
+            const quotesText = document.getElementById('quotes-text');
+            quotesText.textContent = content || 'Content not available';
+        }
+
+        // Function to update Conclusion section
+        function updateConclusion(content) {
+            const conclusionText = document.getElementById('conclusion-text');
+            conclusionText.textContent = content || 'Content not available';
+        }
+
+        // Function to fetch and update all sections
+        // Function to update content and refresh the page
+        // async function updateContent() {
+        //     try {
+        //         // Update path to '../video_content.txt' from 'blog' folder
+        //         const response = await fetch('../video_content.txt');
+        //         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+
+        //         const text = await response.text();
+        //         const sections = text.split('**').filter(Boolean);
+        //         const content = {};
+
+        //         sections.forEach(section => {
+        //             const [heading, ...body] = section.split(':');
+        //             content[heading.trim()] = body.join(':').trim();
+        //         });
+
+        //         // Update content for each section if available
+        //         updateIntroduction(content['Introduction']);
+        //         updateKeyPoints(content['Key Points']);
+        //         updateNotableQuotes(content['Notable Quotes']);
+        //         updateConclusion(content['Conclusion']);
+
+        //         // Refresh the page after 1 second
+        //         setTimeout(() => {
+        //             location.reload(); // Refresh the page
+        //         }, 1000);
+        //     } catch (error) {
+        //         console.error('Error fetching or parsing content:', error);
+        //     }
+        // }
+
+        // Function to fetch and update all sections
+        async function updateContent() {
+            try {
+                // Update path to '../video_content.txt' from 'blog' folder
+                const response = await fetch('../video_content.txt');
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+
+                const text = await response.text();
+
+                // Define section titles for splitting content
+                const sectionTitles = ['Introduction', 'Key Points', 'Notable Quotes', 'Conclusion'];
+
+                // Initialize an object to hold the content for each section
+                const content = {};
+
+                // Iterate over section titles to split and assign content
+                sectionTitles.forEach(title => {
+                    const sectionRegex = new RegExp(`\\*\\*${title}:\\s*(.*?)(?=\\*\\*\\w+:|$)`, 's');
+                    const match = text.match(sectionRegex);
+                    if (match && match[1]) {
+                        content[title] = match[1].trim();
+                    }
+                });
+
+                // Update content for each section if available
+                updateIntroduction(content['Introduction']);
+                updateKeyPoints(content['Key Points']);
+                updateNotableQuotes(content['Notable Quotes']);
+                updateConclusion(content['Conclusion']);
+
+                // Refresh the page after 1 second
+                setTimeout(() => {
+                    location.reload(); // Refresh the page
+                }, 1000);
+            } catch (error) {
+                console.error('Error fetching or parsing content:', error);
+            }
+        }
+
+
+        // Initial content update
+        updateContent();
+        // Periodic content update every 1 second and refresh the page
+        setInterval(updateContent, 1000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+**Heading**
+Hugging Face and the Google PaLM Vision Language Model
+
+**Introduction**
+In this video, we will delve into the PaLM vision language model (VM) from Google, an open-source model that combines image and text processing capabilities. We will explore how to use PaLM with Transformers using the Hugging Face library, enabling you to leverage its powerful features in your own projects.
+
+**Key Points**
+- PaLM is a powerful open VM that outperforms larger models in terms of size and speed.
+- To use PaLM with Transformers, install the accelerated Bits and Bytes library and the latest Transformer library.
+- Request access to the PaLM model from Hugging Face and log in using your token.
+- Use the PaLM model for conditional generation, allowing you to query an image with a question and receive a text response.
+- Process the image using a tokenizer and encoder to convert it into vectors.
+- Generate the text output using the model and decode it to remove special tokens.
+- Experiment with different images and queries to explore the capabilities of PaLM.
+
+**Notable Quotes**
+- "PaLM is smaller faster and stronger."
+- "Understanding PaLM is for a vision model right Vision text model."
+- "This is one of the images that I've actually taken I'm just asking what is the tree being hold by so obviously hands are there."
+
+**Conclusion**
+We have explored the PaLM vision language model and demonstrated how to use it with Transformers using Hugging Face. This powerful model allows you to process images and extract meaningful information, enabling you to create innovative applications with ease.
+
+**Note**
+To access the video's demonstration code and additional resources, please refer to the video description.
